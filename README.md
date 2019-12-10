@@ -33,9 +33,10 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 Note you are responsible for ensuring a custom API domain name resolves to the correct AWS endpoint. 
 When you run CDK deploy CloudFormation will output the following:
-CertifiedProxyEndpointAlias = <custom api> -> <mapped api endpoint> -> <public api endpoint>
-You will need to create a CNAME alias that maps <custom api> -> <mapped api endpoint>
-
+```
+CertifiedProxyEndpointAlias = {custom api} -> {mapped api endpoint} -> {public api endpoint}
+```
+You will need to create a CNAME alias that maps {custom api} -> {mapped api endpoint}
 e.g. 
 ```
 ✅  CdkIdservicesStack (no changes)
