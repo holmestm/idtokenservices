@@ -15,6 +15,7 @@ export class CdkIdservicesStack extends cdk.Stack {
       DOMAIN_NAME               = this.node.tryGetContext('API_DOMAIN_NAME'),
       CERTIFICATE_URN           = this.node.tryGetContext('CERT_URN'),
       API_ENDPOINT_NAME         = this.node.tryGetContext('API_ENDPOINT_NAME') || "IdentityServices",
+      PROXY_FUNCTION_NAME       = this.node.tryGetContext('PROXY_FUNCTION_NAME') || "IDSProxyHandler",
       DEBUG                     = this.node.tryGetContext('DEBUG') || "true"
 
     // create a bespoke role for our stack for lambda execution
@@ -44,7 +45,7 @@ export class CdkIdservicesStack extends cdk.Stack {
     // 
     
     const proxy = new lambda.Function(this, 'IDSProxyHandler', {
-      functionName: 'IDSProxyHandler',
+      functionName: PROXY_FUNCTION_NAME,
       runtime:      lambda.Runtime.NODEJS_10_X,
       code:         lambda.Code.fromAsset('lambda'),
       handler:      'lambda/handlers.proxyHandler',

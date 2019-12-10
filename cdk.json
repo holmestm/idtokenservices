@@ -4,6 +4,7 @@
     "API_DOMAIN_NAME" : "ids.gravitaz.co.uk",
     "CERT_URN" : "arn:aws:acm:eu-west-2:384538104517:certificate/c0e83125-6b75-4c80-b146-18e7d09c7bb8",
     "API_ENDPOINT_NAME" : "IDServices",
+    "PROXY_FUNCTION_NAME" : "IDSProxyHandler",
     "DEBUG" : "true"
   }
 }
